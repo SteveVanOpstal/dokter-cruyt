@@ -1,0 +1,42 @@
+<section>
+  <form [formGroup]="dataForm" (ngSubmit)="submit()">
+    <label>
+      Title:
+      <input type="text" formControlName="title">
+    </label>
+    <section formGroupName="contact">
+        <h2>Contact</h2>
+        <section formGroupName="address">
+          <h3>Address</h3>
+          <label>
+            Street:
+            <input type="text" formControlName="street">
+          </label>
+          <label>
+            City:
+            <input type="text" formControlName="city">
+          </label>
+        </section>
+        <label>
+          Tel.:
+          <input type="number" formControlName="tel">
+        </label>
+        <label>
+          Fax:
+          <input type="number" formControlName="fax">
+        </label>
+        <label>
+          Appointment Link:
+          <input type="text" formControlName="appointmentLink">
+        </label>
+    </section>
+    <section formGroupName="remarks">
+      <h2>Remarks</h2>
+      <textarea formControlName="remarks"></textarea>
+    </section>
+    <button type="submit" [disabled]="!dataForm.valid">Submit</button>
+  </form>
+</section>
+<section>
+  <pc-home [data]="dataForm.value"></pc-home>
+</section>

@@ -1,0 +1,18 @@
+<h1>{{ data?.title }}</h1>
+
+<address>
+  <div>{{ data?.contact?.address?.street }}</div>
+  <div>{{ data?.contact?.address?.city }}</div>
+</address>
+
+<section class="options">
+  <pc-appointment-button class="option" [link]="data?.contact?.appointmentLink"></pc-appointment-button>
+  <div class="option">
+    <pc-call-button [number]="data?.contact?.tel"></pc-call-button>
+    <div *ngIf="data?.contact?.fax">Fax: {{ data?.contact?.fax }}</div>
+  </div>
+</section>
+
+{{ data | json }}
+
+<pc-remarks remarks="data?.remarks"></pc-remarks>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "phaedra-cruyt": {
+    "dokter-cruyt": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/phaedra-cruyt",
+            "outputPath": "dist/dokter-cruyt",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "phaedra-cruyt:build"
+            "browserTarget": "dokter-cruyt:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "phaedra-cruyt:build:production"
+              "browserTarget": "dokter-cruyt:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "phaedra-cruyt:build"
+            "browserTarget": "dokter-cruyt:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "phaedra-cruyt-e2e": {
+    "dokter-cruyt-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "phaedra-cruyt:serve"
+            "devServerTarget": "dokter-cruyt:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "phaedra-cruyt:serve:production"
+              "devServerTarget": "dokter-cruyt:serve:production"
             }
           }
         },
@@ -135,5 +135,5 @@
       }
     }
   },
-  "defaultProject": "phaedra-cruyt"
+  "defaultProject": "dokter-cruyt"
 }
