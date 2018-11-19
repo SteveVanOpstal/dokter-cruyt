@@ -24,6 +24,7 @@
     "@angular/material": "^7.0.4",
     "@angular/platform-browser": "^7.0.4",
     "@angular/platform-browser-dynamic": "^7.0.4",
+    "@angular/router": "^7.0.4",
     "clang-format": "^1.2.4",
     "core-js": "^2.5.4",
     "express": "^4.16.4",
