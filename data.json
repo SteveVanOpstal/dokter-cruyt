@@ -1,13 +1,1 @@
-{
-  "contact": {
-    "title": "Dr. Cruyt",
-    "address": {
-      "street": "Steenbergstraat 21",
-      "city": "2000 Antwerpen"
-    },
-    "tel": "03/225.28.22",
-    "fax": "03/233.10.33",
-    "appointmentLink": "https://www.digitalewachtkamer.be/default.aspx?ID=1375"
-  },
-  "remarks": ""
-}
+{"title":"Dr. Cruyt","contact":{"address":{"street":"Steenbergstraat 21","city":"2000 Antwerpen"},"tel":"032252822","fax":"032331033","appointmentLink":"https://www.digitalewachtkamer.be/default.aspx?ID=1375"},"remarks":"test"}

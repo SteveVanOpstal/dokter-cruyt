@@ -1,3 +1,5 @@
+<img src="/assets/images/profile.jpg"/>
+
 <h1>{{ data?.title }}</h1>
 
 <address>
@@ -6,13 +8,11 @@
 </address>
 
 <section class="options">
-  <pc-appointment-button class="option" [link]="data?.contact?.appointmentLink"></pc-appointment-button>
+  <dc-appointment-button class="option" [link]="data?.contact?.appointmentLink"></dc-appointment-button>
   <div class="option">
-    <pc-call-button [number]="data?.contact?.tel"></pc-call-button>
-    <div *ngIf="data?.contact?.fax">Fax: {{ data?.contact?.fax }}</div>
+    <dc-call-button [number]="data?.contact?.tel"></dc-call-button>
+    <div *ngIf="data?.contact?.fax">Fax: {{ data?.contact?.fax | phone }}</div>
   </div>
 </section>
 
-{{ data | json }}
-
-<pc-remarks remarks="data?.remarks"></pc-remarks>
+<dc-remarks [remarks]="data?.remarks"></dc-remarks>

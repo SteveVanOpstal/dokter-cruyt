@@ -1,5 +1,5 @@
 import * as bodyParser from 'body-parser';
-import * as express from 'express';
+import express from 'express';
 import * as fs from 'fs';
 
 const data_FILE = './data.json';
@@ -21,11 +21,17 @@ const server = express();
 server.use(express.static(__dirname + '/public'));
 server.use(bodyParser.json());
 
-server.get('/data', (req, res) => {
+server.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
+server.get('/api/data', (req, res) => {
   res.json(data).end();
 });
 
-server.post('/data', (req, res) => {
+server.post('/api/data', (req, res) => {
   try {
     const current_data = JSON.stringify(req.body);
     if (current_data !== undefined && current_data.length > 0) {

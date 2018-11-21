@@ -1,42 +1,43 @@
-<section>
+<section class="edit">
   <form [formGroup]="dataForm" (ngSubmit)="submit()">
-    <label>
-      Title:
-      <input type="text" formControlName="title">
-    </label>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Title" formControlName="title">
+    </mat-form-field>
     <section formGroupName="contact">
         <h2>Contact</h2>
         <section formGroupName="address">
           <h3>Address</h3>
-          <label>
-            Street:
-            <input type="text" formControlName="street">
-          </label>
-          <label>
-            City:
-            <input type="text" formControlName="city">
-          </label>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Street" formControlName="street">
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput placeholder="City" formControlName="city">
+          </mat-form-field>
         </section>
-        <label>
-          Tel.:
-          <input type="number" formControlName="tel">
-        </label>
-        <label>
-          Fax:
-          <input type="number" formControlName="fax">
-        </label>
-        <label>
-          Appointment Link:
-          <input type="text" formControlName="appointmentLink">
-        </label>
+        <mat-form-field>
+          <input type="tel" matInput placeholder="Tel" formControlName="tel">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="tel" matInput placeholder="Fax" formControlName="fax">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Appointment Link" formControlName="appointmentLink">
+        </mat-form-field>
     </section>
-    <section formGroupName="remarks">
+    <section>
       <h2>Remarks</h2>
-      <textarea formControlName="remarks"></textarea>
+      <mat-form-field>
+        <textarea matInput placeholder="remarks" formControlName="remarks"></textarea>
+      </mat-form-field>
     </section>
-    <button type="submit" [disabled]="!dataForm.valid">Submit</button>
+    <div>
+      {{ dataForm?.errors | json }}
+      {{ dataForm?.invalid }}
+      {{ dataForm?.pristine }}
+      </div>
+    <button type="submit" [disabled]="dataForm.invalid || dataForm.pristine">Save</button>
   </form>
 </section>
 <section>
-  <pc-home [data]="dataForm.value"></pc-home>
+  <dc-home [data]="dataForm.value"></dc-home>
 </section>

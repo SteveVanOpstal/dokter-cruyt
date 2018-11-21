@@ -4,9 +4,13 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Subscription} from 'rxjs';
 
 
-const DEFAULT = 'Loading..';
+const DEFAULT = '';
 
-@Component({selector: 'pc-admin', templateUrl: 'admin.component.html'})
+@Component({
+  selector: 'dc-admin',
+  templateUrl: 'admin.component.html',
+  styleUrls: ['admin.component.scss']
+})
 export class AdminComponent implements OnInit, OnDestroy {
   dataForm = this.fb.group({
     title: [DEFAULT, Validators.required],

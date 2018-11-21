@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
-import {TelephonePipe} from './telephone.pipe';
+import {PhonePipe} from './phone.pipe';
 
-@NgModule({exports: [TelephonePipe], declarations: [TelephonePipe]})
+@NgModule({declarations: [PhonePipe], exports: [PhonePipe]})
 export class PipesModule {
 }
