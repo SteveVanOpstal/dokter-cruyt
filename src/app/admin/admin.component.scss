@@ -2,12 +2,17 @@
   display: flex;
 }
 
-.edit {
-  padding-right: 20px;
-  background-color: aliceblue;
-}
-
 section {
   display: flex;
   flex-direction: column;
+}
+
+.edit {
+  padding-right: 20px;
+  background-color: aliceblue;
+  min-width: 300px;
+}
+
+.home {
+  width: 100%;
 }

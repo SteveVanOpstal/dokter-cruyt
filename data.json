@@ -1,1 +1,24 @@
-{"title":"Dr. Cruyt","contact":{"address":{"street":"Steenbergstraat 21","city":"2000 Antwerpen"},"tel":"032252822","fax":"032331033","appointmentLink":"https://www.digitalewachtkamer.be/default.aspx?ID=1375"},"remarks":"test"}
+{
+  "title": "Huisartsen Steenbergstraat",
+  "dokters": [
+    {
+      "title": "Dr. Jacobs",
+      "picture": "jacobs.jpg",
+      "appointmentLink": "https://www.digitalewachtkamer.be/default.aspx?ID=439&Taal=&Talen="
+    },
+    {
+      "title": "Dr. Cruyt",
+      "picture": "cruyt.jpg",
+      "appointmentLink": "https://www.digitalewachtkamer.be/default.aspx?ID=1375&Taal=&Talen="
+    }
+  ],
+  "contact": {
+    "address": {
+      "street": "Steenbergstraat 21",
+      "city": "2000 Antwerpen"
+    },
+    "tel": "032252822",
+    "fax": "032331033"
+  },
+  "remarks": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim vehicula dolor ut fringilla. Mauris viverra ex id lorem molestie, id fermentum tellus rutrum. Aenean at dui blandit, aliquam ligula at, vehicula risus. Etiam id arcu velit. Suspendisse nec commodo eros. Proin imperdiet ligula non leo vestibulum, vel semper tortor fringilla. Donec rhoncus, turpis ut sollicitudin aliquet, est ipsum scelerisque eros, vel finibus justo ex non justo. Morbi vehicula libero nulla, eu interdum mauris luctus quis. Sed et nibh at massa faucibus aliquam. Fusce a nisl eu purus suscipit posuere. Maecenas rutrum neque sit amet metus facilisis, ac posuere nunc consequat. Sed sit amet mi non ante eleifend pulvinar at id lacus. Vivamus tincidunt, tortor vel hendrerit scelerisque, eros augue rhoncus tortor, in euismod ipsum felis molestie augue. Phasellus a semper ligula, nec accumsan eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim vehicula dolor ut fringilla. Mauris viverra ex id lorem molestie, id fermentum tellus rutrum. Aenean at dui blandit, aliquam ligula at, vehicula risus. Etiam id arcu velit. Suspendisse nec commodo eros. Proin imperdiet ligula non leo vestibulum, vel semper tortor fringilla. Donec rhoncus, turpis ut sollicitudin aliquet, est ipsum scelerisque eros, vel finibus justo ex non justo. Morbi vehicula libero nulla, eu interdum mauris luctus quis. Sed et nibh at massa faucibus aliquam. Fusce a nisl eu purus suscipit posuere. Maecenas rutrum neque sit amet metus facilisis, ac posuere nunc consequat. Sed sit amet mi non ante eleifend pulvinar at id lacus. Vivamus tincidunt, tortor vel hendrerit scelerisque, eros augue rhoncus tortor, in euismod ipsum felis molestie augue. Phasellus a semper ligula, nec accumsan eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim vehicula dolor ut fringilla. Mauris viverra ex id lorem molestie, id fermentum tellus rutrum. Aenean at dui blandit, aliquam ligula at, vehicula risus. Etiam id arcu velit. Suspendisse nec commodo eros. Proin imperdiet ligula non leo vestibulum, vel semper tortor fringilla. Donec rhoncus, turpis ut sollicitudin aliquet, est ipsum scelerisque eros, vel finibus justo ex non justo. Morbi vehicula libero nulla, eu interdum mauris luctus quis. Sed et nibh at massa faucibus aliquam. Fusce a nisl eu purus suscipit posuere. Maecenas rutrum neque sit amet metus facilisis, ac posuere nunc consequat. Sed sit amet mi non ante eleifend pulvinar at id lacus. Vivamus tincidunt, tortor vel hendrerit scelerisque, eros augue rhoncus tortor, in euismod ipsum felis molestie augue. Phasellus a semper ligula, nec accumsan eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim vehicula dolor ut fringilla. Mauris viverra ex id lorem molestie, id fermentum tellus rutrum. Aenean at dui blandit, aliquam ligula at, vehicula risus. Etiam id arcu velit. Suspendisse nec commodo eros. Proin imperdiet ligula non leo vestibulum, vel semper tortor fringilla. Donec rhoncus, turpis ut sollicitudin aliquet, est ipsum scelerisque eros, vel finibus justo ex non justo. Morbi vehicula libero nulla, eu interdum mauris luctus quis. Sed et nibh at massa faucibus aliquam. Fusce a nisl eu purus suscipit posuere. Maecenas rutrum neque sit amet metus facilisis, ac posuere nunc consequat. Sed sit amet mi non ante eleifend pulvinar at id lacus. Vivamus tincidunt, tortor vel hendrerit scelerisque, eros augue rhoncus tortor, in euismod ipsum felis molestie augue. Phasellus a semper ligula, nec accumsan eros."
+}

@@ -1,8 +1,20 @@
 <section class="edit">
   <form [formGroup]="dataForm" (ngSubmit)="submit()">
-    <mat-form-field>
-      <input type="text" matInput placeholder="Title" formControlName="title">
-    </mat-form-field>
+    <section formArrayName="dokters" *ngIf="dokters?.length">
+      <h2>Dokters</h2>
+      <section *ngFor="let dokter of dokters.controls; index as i" [formGroupName]="i">
+        <mat-form-field>
+          <input type="text" matInput placeholder="Title" formControlName="title">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Picture" formControlName="picture">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Appointment Link" formControlName="appointmentLink">
+        </mat-form-field>
+      </section>
+      <button type="button" (click)="addDokter()">add dokter</button>
+    </section>
     <section formGroupName="contact">
         <h2>Contact</h2>
         <section formGroupName="address">
@@ -20,9 +32,6 @@
         <mat-form-field>
           <input type="tel" matInput placeholder="Fax" formControlName="fax">
         </mat-form-field>
-        <mat-form-field>
-          <input type="text" matInput placeholder="Appointment Link" formControlName="appointmentLink">
-        </mat-form-field>
     </section>
     <section>
       <h2>Remarks</h2>
@@ -30,14 +39,9 @@
         <textarea matInput placeholder="remarks" formControlName="remarks"></textarea>
       </mat-form-field>
     </section>
-    <div>
-      {{ dataForm?.errors | json }}
-      {{ dataForm?.invalid }}
-      {{ dataForm?.pristine }}
-      </div>
     <button type="submit" [disabled]="dataForm.invalid || dataForm.pristine">Save</button>
   </form>
 </section>
-<section>
+<section class="home">
   <dc-home [data]="dataForm.value"></dc-home>
 </section>

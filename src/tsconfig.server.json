@@ -1,16 +1,17 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "allowJs": true,
-    "module": "commonjs",
-    "outDir": "../out-tsc",
+    "outDir": "../out-tsc/app",
     "resolveJsonModule": true,
     "baseUrl": "./",
-    "types": [
-      "node"
-    ]
+    "module": "commonjs",
+    "types": []
   },
-  "files": [
-    "server/server.ts"
-  ]
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ],
+  "angularCompilerOptions": {
+    "entryModule": "app/app.server.module#AppServerModule"
+  }
 }

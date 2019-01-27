@@ -1,18 +1,56 @@
 :host {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 100%;
+  min-height: 100vh;
   text-align: center;
 }
 
-.options {
+.header {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50vh;
+  min-height: 400px;
+}
+
+.info {
+  color: white;
+  height: 50vh;
+  min-height: 400px;
+  margin: 0 2rem;
+}
+
+h1 {
+  width: 300px;
+  margin: 2rem auto;
+}
+
+.dokters {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 3rem auto;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.dokter {
+  margin: 1rem;
+}
+
+.address {
+  margin: .25rem;
+}
+
+.options {
+  margin: .5rem;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.option {
-  margin: 20px;
+.fax {
+  margin: .5rem;
 }
 
 img {
@@ -20,4 +58,5 @@ img {
   height: 70px;
   border-radius: 25px;
   margin: 0 auto;
+  border: 0.5rem solid;
 }

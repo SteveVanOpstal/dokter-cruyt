@@ -1,18 +1,26 @@
-<img src="/assets/images/profile.jpg"/>
+<div class="header primary">
+  <h1 *ngIf="data?.title">{{ data?.title }}</h1>
 
-<h1>{{ data?.title }}</h1>
+  <address class="address">
+    <div>{{ data?.contact?.address?.street }}</div>
+    <div>{{ data?.contact?.address?.city }}</div>
+  </address>
 
-<address>
-  <div>{{ data?.contact?.address?.street }}</div>
-  <div>{{ data?.contact?.address?.city }}</div>
-</address>
-
-<section class="options">
-  <dc-appointment-button class="option" [link]="data?.contact?.appointmentLink"></dc-appointment-button>
-  <div class="option">
+  <section class="options">
     <dc-call-button [number]="data?.contact?.tel"></dc-call-button>
-    <div *ngIf="data?.contact?.fax">Fax: {{ data?.contact?.fax | phone }}</div>
-  </div>
-</section>
+    <div class="fax" *ngIf="data?.contact?.fax">Fax: {{ data?.contact?.fax | phone }}</div>
+  </section>
+</div>
 
-<dc-remarks [remarks]="data?.remarks"></dc-remarks>
+<div class="info">
+  <div class="dokters">
+    <section class="dokter" *ngFor="let dokter of data?.dokters">
+      <img [attr.src]="'/assets/images/' + dokter.picture" />
+      <h2 *ngIf="data?.title">{{ dokter.title }}</h2>
+      <h1 *ngIf="!data?.title">{{ dokter.title }}</h1>
+      <dc-appointment-button [link]="dokter.appointmentLink"></dc-appointment-button>
+    </section>
+  </div>
+
+  <dc-remarks [remarks]="data?.remarks"></dc-remarks>
+</div>

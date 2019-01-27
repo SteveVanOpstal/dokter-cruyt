@@ -11,7 +11,8 @@ import {BaseUrlInterceptor} from './shared/interceptors/base-url.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, HomeModule, HttpClientModule, AppRoutingModule],
+  imports: [
+    BrowserModule.withServerTransition({appId: 'dc'}), BrowserAnimationsModule, HomeModule, HttpClientModule, AppRoutingModule],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: BaseUrlInterceptor, multi: true}, IconService],
   bootstrap: [AppComponent]
 })
