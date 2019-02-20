@@ -8,10 +8,10 @@
       "type": "node",
       "request": "launch",
       "name": "serve",
-      "program": "${workspaceFolder}/out-tsc/server.js",
-      "preLaunchTask": "tsc: build - src\\tsconfig.node.json",
+      "program": "${workspaceFolder}/dist/server.js",
+      "preLaunchTask": "npm: build:ssr",
       "outFiles": [
-        "${workspaceFolder}/dist/out-tsc/*.js"
+        "${workspaceFolder}/dist/*.js"
       ]
     }
   ]

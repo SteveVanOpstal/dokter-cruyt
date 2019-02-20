@@ -4,11 +4,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "typescript",
-      "tsconfig": "src\\tsconfig.node.json",
-      "problemMatcher": [
-        "$tsc"
-      ]
+      "type": "npm",
+      "script": "build:ssr",
+      "problemMatcher": []
     }
   ]
 }
