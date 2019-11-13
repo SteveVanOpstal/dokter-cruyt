@@ -1,0 +1,14 @@
+:host([ready]) img.thumb {
+  opacity: 0;
+}
+
+img {
+  width: 400px;
+  height: 300px;
+
+  &.thumb {
+    position: absolute;
+    opacity: 1;
+    transition: opacity .5s;
+  }
+}

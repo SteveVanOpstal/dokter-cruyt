@@ -1,4 +1,6 @@
-<div class="header primary">
+<dc-load-image src="/thumbs/cover.jpg" scrThumb="/assets/images/cover.jpg"></dc-load-image>
+
+<div class="header">
   <h1 *ngIf="data?.title">{{ data?.title }}</h1>
 
   <address class="address">
@@ -15,7 +17,7 @@
 <div class="info">
   <div class="dokters">
     <section class="dokter" *ngFor="let dokter of data?.dokters">
-      <img [attr.src]="'/assets/images/' + dokter.picture" />
+      <img *ngIf="dokter?.picture" [attr.src]="'/assets/images/' + dokter?.picture" />
       <h2 *ngIf="data?.title">{{ dokter.title }}</h2>
       <h1 *ngIf="!data?.title">{{ dokter.title }}</h1>
       <dc-appointment-button [link]="dokter.appointmentLink"></dc-appointment-button>

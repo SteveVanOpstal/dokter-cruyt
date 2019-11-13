@@ -2,13 +2,15 @@
   "title": "Huisartsen Steenbergstraat",
   "dokters": [
     {
-      "title": "Dr. Jacobs",
-      "picture": "jacobs.jpg",
+      "title": "Dr. Mast",
       "appointmentLink": "https://www.digitalewachtkamer.be/default.aspx?ID=439&Taal=&Talen="
     },
     {
+      "title": "Dr. Jacobs",
+      "appointmentLink": "https://www.digitalewachtkamer.be/default.aspx?ID=438&Taal=&Talen="
+    },
+    {
       "title": "Dr. Cruyt",
-      "picture": "cruyt.jpg",
       "appointmentLink": "https://www.digitalewachtkamer.be/default.aspx?ID=1375&Taal=&Talen="
     }
   ],

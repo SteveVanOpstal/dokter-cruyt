@@ -1,12 +1,13 @@
-import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
+import 'zone.js/dist/zone-node';
 
 import {enableProdMode} from '@angular/core';
 import {renderModuleFactory} from '@angular/platform-server';
 import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
-import * as bodyParser from 'body-parser';
+import bodyParser from 'body-parser';
 import express from 'express';
-import {existsSync, readFileSync, writeFile, writeFileSync} from 'fs';
+import {existsSync, readdir, readFileSync, writeFile, writeFileSync} from 'fs';
+import Jimp from 'jimp';
 import {join} from 'path';
 
 enableProdMode();
@@ -23,6 +24,25 @@ try {
   console.log(data);
 } catch {
 }
+
+// thumbs
+const thumbs = [];
+readdir('dist/browser/assets/images', (err, filenames) => {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+  for (const filename of filenames) {
+    Jimp.read('dist/browser/assets/images/' + filename)
+        .then((image) => {
+          const thumb =
+              image.resize(image.getWidth() / 5, image.getHeight() / 5).blur(1).quality(60);
+          thumb.getBufferAsync(Jimp.MIME_JPEG).then((d) => thumbs.push({name: filename, data: d}));
+          console.log('processed: ' + filename);
+        })
+        .catch((e) => console.error(e));
+  }
+});
 
 
 // Express server
@@ -60,20 +80,11 @@ app.use((_req, res, next) => {
   next();
 });
 
-// Server static files from /browser
-app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
-
-// All regular routes use the Universal engine
-app.get('*', async (_req, res) => {
-  try {
-    const html = await renderHtml();
-    res.writeHead(200);
-    res.write(html);
-    res.end();
-  } catch (error) {
-    res.writeHead(600, error);
-    res.end();
-  }
+app.get('/thumbs/*', (req, res) => {
+  const thumb = thumbs.find(t => req.url.indexOf(t.name) > -1);
+  console.log(req.url);
+  res.contentType('jpeg');
+  res.end(thumb.data, 'binary');
 });
 
 app.get('/api/data', (_req, res) => {
@@ -98,7 +109,23 @@ app.post('/api/data', (req, res) => {
   res.end();
 });
 
-// Start up the Node server
+// Server static files from /browser
+app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
+
+// All regular routes use the Universal engine
+app.get('*', async (_req, res) => {
+  try {
+    const html = await renderHtml();
+    res.writeHead(200);
+    res.write(html);
+    res.end();
+  } catch (error) {
+    res.writeHead(600, error);
+    res.end();
+  }
+});
+
+// // Start up the Node server
 app.listen(PORT, () => {
   console.log(`Node server listening on http://localhost:${PORT}`);
 });
